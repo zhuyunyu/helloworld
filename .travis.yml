@@ -1,2 +1,10 @@
 language: c
-script: gcc test.c -o test
+dist: bionic
+sudo: required
+install:
+  - sudo apt update
+  - sudo apt-get install -y libcur14-openssl-dev
+  
+script:
+  - gcc hello.c -o hello -lcurl
+  - ./hello
